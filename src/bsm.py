@@ -37,15 +37,6 @@ class BSM:
         return norm.cdf(self.d1)
 
     @functools.cached_property
-    def gamma(self):
-        return norm.pdf(self.d1) / (self.S * self.sigma * math.sqrt(self.T))
-
-    @functools.cached_property
-    def theta(self):
-        S, E, r, T, sigma, d1, d2 = self.S, self.E, self.r, self.T, self.sigma, self.d1, self.d2
-        return -0.5 * S * norm.pdf(d1) * sigma / math.sqrt(T) - r * E * math.exp(-r * T) * norm.cdf(d2)
-
-    @functools.cached_property
     def vega(self):
         return self.S * math.sqrt(self.T) * norm.pdf(self.d1)
 
