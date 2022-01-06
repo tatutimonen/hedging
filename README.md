@@ -6,7 +6,7 @@ We consider the problem of hedging a portfolio of at-the-money call options on S
 
 ### Theoretical Background 
 
-The source for this section is *Options futures and other derivatives, ninth edition* by John C Hull.
+The source for this section is *Options futures and other derivatives, ninth edition* by John C. Hull.
 
 The well-known Black-Scholes-Merton model provides a closed-form expression describing the price of a European call option:
 
