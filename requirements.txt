@@ -3,4 +3,3 @@ pandas>=1.0.4
 pyfinance
 scipy>=1.4.1
 click
-
