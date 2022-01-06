@@ -21,7 +21,7 @@ The Greeks are a collection of partial derivatives of the function <i>C</i>. We 
 </p>
 
 <p align="center">
-   <img src="https://latex.codecogs.com/svg.latex?\Delta&space;&=&space;\frac{\partial&space;C}{\partial&space;S_t}&space;&=&space;\mathcal{N}(d_1)%2E">
+   <img src="https://latex.codecogs.com/svg.latex?\Delta&space;&=&space;\frac{\partial&space;C}{\partial&space;S_t}&space;&=&space;\mathcal{N}(d_1)">
 </p>
 
 In essence, the delta of an option quantifies the sensitivity of the price of the option with respect to change in
@@ -30,7 +30,7 @@ the underlying. In delta hedging, we compensate for this risk by entering into a
 The vega of a European call option with an underlying that pays no dividends is defined as
 
 <p align="center">
-   <img src="https://latex.codecogs.com/svg.latex?\mathcal{V}&space;&=&space;\frac{\partial&space;C}{\partial&space;\sigma}&space;&=&space;S_t&space;\sqrt{T-t}&space;\,&space;\mathcal{N}%26(d_1)%2E">
+   <img src="https://latex.codecogs.com/svg.latex?\mathcal{V}&space;&=&space;\frac{\partial&space;C}{\partial&space;\sigma}&space;&=&space;S_t&space;\sqrt{T-t}&space;\,&space;\mathcal{N}%26(d_1)">
 </p>
 
 The vega of an option captures the price risk related to changes in volatility. In delta-vega hedging, one seeks risk neutrality with respect to both delta and vega. Since the vega of the underlying is zero, taking further option positions is required to achieve vega neutrality.
@@ -46,7 +46,7 @@ One may notice that delta-vega hedging is superior to delta hedging as it provid
 ### Running Locally
 
    1. Install the required libraries with ```pip install -r requirements.txt```
-   2. Do ```python main.py``` and proceed as you see fit
+   2. For usage information, do ```python main.py --help```, and proceed as you see fit
 
 ----
 
