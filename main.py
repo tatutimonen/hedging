@@ -6,7 +6,6 @@ from hedger import Hedger
 from options_data import OptionsData
 
 #-------------------------------------------------------------------------
-# Entry point.
 
 @click.command(no_args_is_help=True)
 @click.option("--portfolio-size", "-pfs", multiple=True, type=click.IntRange(min=1, max=5),
