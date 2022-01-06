@@ -1,4 +1,4 @@
-## Hedging a Portfolio of S&P 100 Call Options
+## Hedging
 
 We consider the problem of hedging a portfolio of at-the-money call options on S&P 100 index against the Greeks delta and vega on market data from the year 2010. This repository contains an implementation of a CLI tool to compare the performance of delta -and delta-vega hedging of portfolios of different sizes and with different hedging schedules. Python Standard Library module ```concurrent.futures``` is leveraged for parallel execution. Our work is related to a course assignment from the Aalto University course *TU-E2210 - Financial Engineering I*.
 
