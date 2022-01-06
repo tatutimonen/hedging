@@ -21,7 +21,7 @@ The Greeks are a collection of partial derivatives of the function <i>C</i>. We 
 </p>
 
 <p align="center">
-   <img src="https://latex.codecogs.com/svg.latex?\Delta&space;&=&space;\frac{\partial&space;C}{\partial&space;S_t}&space;&=&space;\mathcal{N}(d_1)">
+   <img src="https://latex.codecogs.com/svg.image?\Delta&space;=&space;\frac{\partial&space;C}{\partial&space;S_t}&space;=&space;\mathcal{N}(d_1)." title="\Delta = \frac{\partial C}{\partial S_t} = \mathcal{N}(d_1)." />
 </p>
 
 In essence, the delta of an option quantifies the sensitivity of the price of the option with respect to change in
@@ -30,7 +30,7 @@ the underlying. In delta hedging, we compensate for this risk by entering into a
 The vega of a European call option with an underlying that pays no dividends is defined as
 
 <p align="center">
-   <img src="https://latex.codecogs.com/svg.latex?\mathcal{V}&space;&=&space;\frac{\partial&space;C}{\partial&space;\sigma}&space;&=&space;S_t&space;\sqrt{T-t}&space;\,&space;\mathcal{N}%26(d_1)">
+   <img src="https://latex.codecogs.com/svg.image?\mathcal{V}&space;=&space;\frac{\partial&space;C}{\partial&space;\sigma}&space;=&space;S_t&space;\sqrt{T-t}&space;\,&space;\mathcal{N}'(d_1)." title="\mathcal{V} = \frac{\partial C}{\partial \sigma} = S_t \sqrt{T-t} \, \mathcal{N}'(d_1)." />
 </p>
 
 The vega of an option captures the price risk related to changes in volatility. In delta-vega hedging, one seeks risk neutrality with respect to both delta and vega. Since the vega of the underlying is zero, taking further option positions is required to achieve vega neutrality.
