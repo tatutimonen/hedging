@@ -2,7 +2,7 @@ import os
 import re
 import pandas as pd
 
-#----------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 
 class OptionsData:
     data_dir = "data"
@@ -14,10 +14,13 @@ class OptionsData:
             faulty_filepath = filepath
             filepath = os.path.join(self.data_dir, self.default_filename)
             print(f"[{type(self).__name__}] Warning: could not find {faulty_filepath!r}; proceeding with {filepath!r}")
+
         self.__sheet_df_dict = pd.read_excel(filepath, sheet_name=None)
         sheets = list(self.__sheet_df_dict.keys())
+        # Correct the sheet ordering.
         sheets = sheets[:2] + list(reversed(sheets[2:]))
         self.__sheet_succ = dict(zip(sheets, sheets[1:] + [sheets[-1]]))
+
         if clean:
             for key, val in self.__sheet_df_dict.items():
                 self.__sheet_df_dict[key] = self.__clean_df(val)
@@ -38,10 +41,13 @@ class OptionsData:
         if not sheet_name:
             sheet_name = list(self.__sheet_df_dict.keys())[0]
             print(f"[{type(self).__name__}] Warning: sheet name not specified; proceeding with {sheet_name!r}")
+
         df = self.__sheet_df_dict[sheet_name]
         common = ["date", "T", "T_norm", "S", "r"]
+
         if not E:
             return df[[*common, *filter(lambda x: re.match(r"\d+", x), df.columns)]]
+
         strikes = E if type(E) is list or type(E) is tuple else [E]
         cols = [*common, *map(lambda x: str(int(x)), strikes)]
         return df[cols]
@@ -85,5 +91,4 @@ class OptionsData:
             elif col_idx == ncol - 2:
                 return "r"
 
-#----------------------------------------------------------------------------
-
+#-------------------------------------------------------------------------

@@ -1,11 +1,13 @@
 import math
 from dataclasses import dataclass, field
 import functools
+import warnings
+warnings.filterwarnings("ignore")
 import numpy as np
 from scipy.stats import norm
 from pyfinance.options import BSM as BSMAux
 
-#----------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 
 @dataclass(frozen=True)
 class BSM:
@@ -40,5 +42,4 @@ class BSM:
     def vega(self):
         return self.S * math.sqrt(self.T) * norm.pdf(self.d1)
 
-#----------------------------------------------------------------------------
-
+#-------------------------------------------------------------------------
