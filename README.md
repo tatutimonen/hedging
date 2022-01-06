@@ -39,16 +39,16 @@ The vega of an option captures the price risk related to changes in volatility. 
 
 ----
 
-### Results
-
-One may notice that delta-vega hedging is superior to delta hedging as it provides smaller mean-squared error for the hedging period with smaller hedging costs.
-
-----
-
 ### Running Locally
 
    1. Install the required libraries with ```pip install -r requirements.txt```
    2. For usage information, do ```python main.py --help```, and proceed as you see fit
+
+----
+
+### Results
+
+One may notice that delta-vega hedging is superior to delta hedging as it provides smaller mean-squared error for the hedging period with smaller hedging costs.
 
 ----
 
