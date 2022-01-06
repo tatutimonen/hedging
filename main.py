@@ -13,7 +13,7 @@ from options_data import OptionsData
               help="Size of the portfolio to be hedged.")
 @click.option("--schedule", "-sch", multiple=True, type=click.IntRange(min=1, max=10),
               help="Hedging schedule to consider (in days).")
-@click.option("--hedge-type", "-ht", multiple=True, type=click.Choice(["delta", "delta-vega"], case_sensitive=False))
+@click.option("--hedge-type", "-ht", multiple=True, type=click.Choice(["delta", "delta-vega"], case_sensitive=True))
 def execute_cmdline(portfolio_size, schedule, hedge_type):
     """A CLI application to evaluate delta and delta-vega hedging performance on portfolios of
        at-the-money call options on S&P 100 during the trading year of 2010."""
