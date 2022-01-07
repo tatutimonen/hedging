@@ -48,13 +48,13 @@ The vega of an option captures the price risk related to changes in volatility. 
 
 ### Results
 
-One may notice that delta-vega hedging is superior to delta hedging as it provides smaller mean-squared error for the hedging period with smaller hedging costs.
+One may notice that delta-vega hedging is superior to delta hedging as it provides smaller mean squared error for the hedging period with smaller hedging costs.
 
 ----
 
 ### Note
 
-The provided data contains erroneous price action information in some of its sheets (e.g., the option price increasing 1000-fold in a single day). As such, with certain sheets and hedging strategies and parameters the reported mean-squeared errors explode to non-sensical levels.
+The provided data contains erroneous price action information in some of its sheets (e.g., the option price increasing 1000-fold in a single day). As such, with certain sheets and hedging strategies and parameters the reported mean squeared errors explode to non-sensical levels.
 
 ----
 
