@@ -60,4 +60,4 @@ The provided data contains erroneous price action information in some of its she
 
 ### Authors
 
-Miro Kaarela (@mkaarela), Roope Kausiala (@AdmiralBulldog), Tatu Timonen (@timonent)
+Miro Kaarela ([mkaarela](https://github.com/mkaarela)), Roope Kausiala ([AdmiralBulldog](https://github.com/AdmiralBulldog)), Tatu Timonen ([timonent](https://github.com/timonent))
