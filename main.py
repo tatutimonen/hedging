@@ -8,11 +8,11 @@ from options_data import OptionsData
 #-------------------------------------------------------------------------
 
 @click.command(no_args_is_help=True)
-@click.option("--portfolio-size", "-pfs", multiple=True, type=click.IntRange(min=1, max=5),
+@click.option("--portfolio-size", "-p", multiple=True, type=click.IntRange(min=1, max=5),
               help="Size of the portfolio to be hedged.")
-@click.option("--schedule", "-sch", multiple=True, type=click.IntRange(min=1, max=10),
+@click.option("--schedule", "-s", multiple=True, type=click.IntRange(min=1, max=10),
               help="Hedging schedule to consider (in days).")
-@click.option("--hedge-type", "-ht", multiple=True, type=click.Choice(["delta", "delta-vega"], case_sensitive=True))
+@click.option("--hedge-type", "-h", multiple=True, type=click.Choice(["delta", "delta-vega"], case_sensitive=True))
 def execute_cmdline(portfolio_size, schedule, hedge_type):
     """A CLI application to evaluate delta and delta-vega hedging performance on portfolios of
        at-the-money call options on S&P 100 during the trading year of 2010."""
@@ -29,7 +29,7 @@ def execute_cmdline(portfolio_size, schedule, hedge_type):
     lock = threading.Lock()
     print("Performing hedging in parallel...")
     with concurrent.futures.ProcessPoolExecutor() as executor:
-        stats_futures = [executor.submit(getattr(Hedger, f"{ht}_hedge"), data, sheet, pfs, sch) for ht, sheet, pfs, sch in task_params]
+        stats_futures = [executor.submit(getattr(Hedger, f"{h}_hedge"), data, sh, p, s) for h, sh, p, s in task_params]
         for stats in concurrent.futures.as_completed(stats_futures):
             lock.acquire()
             results.append(stats.result())
