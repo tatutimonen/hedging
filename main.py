@@ -26,14 +26,11 @@ def execute_cmdline(portfolio_size, schedule, hedge_type):
 
     task_params = it.product(hedge_type, sheets, portfolio_size, schedule)
     results = []
-    lock = threading.Lock()
     print("Performing hedging in parallel...")
     with concurrent.futures.ProcessPoolExecutor() as executor:
         stats_futures = [executor.submit(getattr(Hedger, f"{h}_hedge"), data, sh, p, s) for h, sh, p, s in task_params]
         for stats in concurrent.futures.as_completed(stats_futures):
-            lock.acquire()
             results.append(stats.result())
-            lock.release()
 
     for result in results:
         print(result)
