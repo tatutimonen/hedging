@@ -46,10 +46,10 @@ class OptionsData:
         common = ["date", "T", "T_norm", "S", "r"]
 
         if not E:
-            return df[[*common, *filter(lambda x: re.match(r"\d+", x), df.columns)]]
+            return df[[*common, *[x for x in df.columns if x.isnumeric()]]]
 
         strikes = E if type(E) is list or type(E) is tuple else [E]
-        cols = [*common, *map(lambda x: str(int(x)), strikes)]
+        cols = [*common, *[str(int(x)) for x in strikes]]
         return df[cols]
     
     def __clean_df(self, df):
@@ -68,7 +68,7 @@ class OptionsData:
         df["T_norm"] = df["T"] / 252
         # Re-arrange the columns.
         common = ["S", "r", "T", "T_norm"]
-        cols = [*common, *filter(lambda x: re.search("\d+", x), df.columns.astype(str))]
+        cols = [*common, *(x for x in df.columns.astype(str) if x.isnumeric())]
         df = df[cols]
         df["date"] = date
         return df

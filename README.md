@@ -10,9 +10,14 @@ The source for this section is *Options futures and other derivatives, ninth edi
 
 The well-known Black-Scholes-Merton model provides a closed-form expression describing the price of a European call option:
 
-<p align="center">
-   <img src="https://latex.codecogs.com/svg.image?\begin{align*}C(t,&space;S_t;&space;E,&space;T;&space;\sigma)&space;&=&space;S_t&space;\,&space;\mathcal{N}(d_1)&space;-&space;E&space;e^{-r(T-t)}&space;\mathcal{N}(d_2),\\&space;d_1&space;&=&space;\frac{\ln(S_t/E)&space;&plus;&space;(r&space;&plus;&space;\sigma^2/2)(T-t)}{\sigma&space;\sqrt{T-t}},&space;\\&space;d_2&space;&=&space;d_1&space;-&space;\sigma&space;\sqrt{T-t},&space;\\&space;\mathcal{N}(x)&space;&=&space;\frac{1}{2\pi}\int_{-\infty}^x&space;e^{-u^2/2}&space;\,&space;\mathrm{d}u,&space;\end{align*}"/>
-</p>
+$$
+\begin{align*}
+C(t, S_t; E, T; \sigma) &= S_t \, \mathcal{N}(d_1) - E e^{-r(T-t)} \mathcal{N}(d_2), \\
+d_1 &= \frac{\ln(S_t/E) + (r + \sigma^2/2)(T-t)}{\sigma \sqrt{T-t}}, \\
+d_2 &= d_1 - \sigma \sqrt{T-t}, \\
+\mathcal{N}(x) &= \frac{1}{2\pi}\int_{-\infty}^x e^{-u^2/2} \, \mathrm{d}u,
+\end{align*}
+$$
 
 <p>
 where <i>t</i> denotes the current time, <i>S<sub>t</sub></i> the price of the underlying at time <i>t</i>, <i>E</i> the strike price, <i>T</i> the time to maturity, <i>σ</i> the volatility, and <i>r</i> the risk-free interest rate. We assume this as the pricing model of call options in this context.
@@ -23,7 +28,7 @@ The Greeks are a collection of partial derivatives of the function <i>C</i>. We 
 </p>
 
 <p align="center">
-   <img src="https://latex.codecogs.com/svg.image?\Delta&space;=&space;\frac{\partial&space;C}{\partial&space;S_t}&space;=&space;\mathcal{N}(d_1)."/>
+   <img src="https://latex.codecogs.com/svg.image?\Delta = \frac{\partial C}{\partial S_t} = \mathcal{N}(d_1)."/>
 </p>
 
 In essence, the delta of an option quantifies the sensitivity of the price of the option with respect to change in
@@ -32,7 +37,7 @@ the underlying. In delta hedging, we compensate for this risk by entering into a
 The vega of a European call option with an underlying that pays no dividends is defined as
 
 <p align="center">
-   <img src="https://latex.codecogs.com/svg.image?\mathcal{V}&space;=&space;\frac{\partial&space;C}{\partial&space;\sigma}&space;=&space;S_t&space;\sqrt{T-t}&space;\,&space;\mathcal{N}'(d_1)."/>
+   <img src="https://latex.codecogs.com/svg.image?\mathcal{V} = \frac{\partial C}{\partial \sigma} = S_t \sqrt{T-t} \, \mathcal{N}'(d_1)."/>
 </p>
 
 The vega of an option captures the price risk related to changes in volatility. In delta-vega hedging, one seeks risk neutrality with respect to both delta and vega. Since the vega of the underlying is zero, taking further option positions is required to achieve vega neutrality.

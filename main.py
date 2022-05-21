@@ -14,21 +14,22 @@ from options_data import OptionsData
               help="Hedging schedule to consider (in days).")
 @click.option("--hedge-type", "-h", multiple=True, type=click.Choice(["delta", "delta-vega"], case_sensitive=True))
 def execute_cmdline(portfolio_size, schedule, hedge_type):
-    """A CLI application to evaluate delta and delta-vega hedging performance on portfolios of
+    """Evaluate delta and delta-vega hedging performance on portfolios of
        at-the-money call options on S&P 100 during the trading year of 2010."""
 
     portfolio_size = sorted(set(portfolio_size))
     schedule = sorted(set(schedule))
-    hedge_type = sorted(map(lambda x: x.replace("-", "_"), set(hedge_type)))
+    hedge_type = sorted(x.replace("-", "_") for x in set(hedge_type))
 
     data = OptionsData()
     sheets = data.get_sheet_names()
 
     task_params = it.product(hedge_type, sheets, portfolio_size, schedule)
     results = []
+
     print("Performing hedging in parallel...")
     with concurrent.futures.ProcessPoolExecutor() as executor:
-        stats_futures = [executor.submit(getattr(Hedger, f"{h}_hedge"), data, sh, p, s) for h, sh, p, s in task_params]
+        stats_futures = [executor.submit(getattr(Hedger, f"{hedge_type}_hedge"), data, *params) for hedge_type, *params in task_params]
         for stats in concurrent.futures.as_completed(stats_futures):
             results.append(stats.result())
 
