@@ -15,11 +15,11 @@ The well-known Black-Scholes-Merton model provides a closed-form expression desc
 </p>
 
 <p>
-where <i>t</i> denotes the current time, <i>S<sub>t</sub></i> the price of the underlying at time <i>t</i>, <i>E</i> the strike price, <i>T</i> the time to maturity, <i>σ</i> the volatility, and <i>r</i> the risk-free interest rate. We assume this as the pricing model of call options in this context.
+where $t$ denotes the current time, $S_t$ the price of the underlying at time $t$, $E$ the strike price, $T$ the time to maturity, $\sigma$ the volatility, and $r$ the risk-free interest rate. We assume this as the pricing model of call options in this context.
 </p>
 
 <p>
-The Greeks are a collection of partial derivatives of the function <i>C</i>. We consider the Greeks delta and vega. The delta of a European call option with an underlying that pays no dividends is defined as
+The Greeks are a collection of partial derivatives of the function $C$. We consider the Greeks delta and vega. The delta of a European call option with an underlying that pays no dividends is defined as
 </p>
 
 <p align="center">
