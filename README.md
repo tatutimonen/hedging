@@ -1,6 +1,6 @@
 ## Hedging
 
-We consider the problem of hedging a portfolio of European at-the-money call options on the S&P 100 index against the Greeks delta and vega on market data from the year 2010. This repository contains an implementation of a CLI tool to compare the performance of delta -and delta-vega hedging of portfolios of different sizes and with different hedging schedules. Python Standard Library module ```concurrent.futures``` is leveraged for parallel execution. This work is related to an assignment from the Aalto University course *Financial Engineering I*. The data was provided by the course personnel.
+We consider the problem of hedging a portfolio of European at-the-money call options on the S&P 100 index against the Greeks delta and vega on market data from the year 2010. This repository contains an implementation of a CLI tool to compare the performance of delta -and delta-vega hedging of portfolios of different sizes and with different hedging schedules. ```concurrent.futures``` is leveraged for parallel execution. This work is related to an assignment from the Aalto University course *Financial Engineering I*. The data was provided by the course personnel.
 
 ----
 
@@ -15,7 +15,7 @@ The well-known Black-Scholes-Merton model provides a closed-form expression desc
 </p>
 
 <p>
-where $t$ denotes the current time, $S_t$ the price of the underlying at time $t$, $E$ the strike price, $T$ the time to maturity, $\sigma$ the volatility, and $r$ the risk-free interest rate. We assume this as the pricing model of call options in this context.
+where $t$ denotes the current time, $S_t$ the price of the underlying at time $t$, $E$ the strike price, $T$ the time to maturity, $ \sigma$ the volatility, and $r$ the risk-free interest rate. We assume this as the pricing model of call options in this context.
 </p>
 
 <p>
