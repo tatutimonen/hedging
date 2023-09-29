@@ -52,7 +52,7 @@ One may notice that delta-vega hedging is superior to delta hedging as it provid
 
 ## Note
 
-The provided data contains erroneous price action information in some of its sheets (e.g., the option price increasing 1000-fold in a single day). As such, with certain sheets the reported mean squeared errors explode to non-sensical levels.
+It turns out the provided data contains erroneous price action information in some of its sheets (e.g., the option price increasing 1000-fold in a single day). As such, with certain sheets the reported mean squeared errors explode to non-sensical levels.
 
 ----
 
